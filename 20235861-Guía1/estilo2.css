@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap'); 
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+body{
+    background-color: #fdf4f4;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+#beraly{ 
+    color: rgb(255, 169, 112);
+    text-align: center;
+}
+#titulo {
+    font-family:"Bebas Neue", sans-serif;
+    text-align: center;  
+    font-size: 50px;
+}
+
+#subtitulo {
+
+    text-align: center;
+    font-family: "Space Mono", monospace;
+    font-size: 25px;
+
+}
+#info {
+    text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 18px;
+}
+#intro-text {
+
+    color:rgb(72, 46, 29);
+
+}
+.extra {
+    font-size: 18px;
+    font-family: Roboto;}
+
+a {
+    color: #e18a8a;
+    text-decoration: none;
+}
+a:hover {
+    color: #efad84; 
+    text-decoration: underline;
+}
+
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    margin-top: 5%;
+}
+ 
