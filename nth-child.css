@@ -1,0 +1,54 @@
+body{
+    background-color: lightgoldenrodyellow;
+}
+
+.container{
+    width: 90%;
+    margin: 0 auto;
+    background-color: whitesmoke;
+}
+ul{
+    width: 80%;
+    margin: 0 auto;
+}
+
+li{
+    list-style-type: none;
+    padding: 10px;
+    border: 2px solid lightcyan;
+}
+
+li:nth-child(2n+1){
+    background-color: pink;
+}
+li:nth-child(2n+2){
+    background-color: coral;
+}
+
+table{
+    border: 1px solid palevioletred;
+    width: 50%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    text-align: center;
+
+}
+
+th, td{
+    border: 1px solid coral;
+    padding: 2%;
+}
+
+thead{
+    background-color: coral;
+    color: white;
+    font-weight: bold;
+}
+
+tbody tr:nth-child(2n+2){
+    background-color: pink;
+
+}
+tbody tr:hover{
+    background-color: aqua;
+}
