@@ -29,7 +29,7 @@ div.wrapper{
 }
 
 section article{
-    background-color: rbga(33,62,74,1);
+    background-color: rgba(33,62,74,1);
     margin-top: 20px;
     padding: 12px;
 }
