@@ -53,22 +53,9 @@ nav span a:hover{
     background-color: #B2DFDB;
 }
 
-nav span a[href= "https://es.wikipedia.org/wiki/El_discurso_del_rey" ]:hover{
+nav span a[href="http://www.sensacine.com/peliculas/pelicula-175305/reparto"] {
     background-color: #9E9E9E;
 }
-
-nav span a[href= "https://www.lahiguera.net/cinemania/pelicula/5006/sinopsis.php" ]:hover{
-    background-color: #9E9E9E;
-}
-
-nav span a[href= "https://www.lahiguera.net/cinemania/pelicula/5006/comentario.php" ]:hover{
-    background-color: #9E9E9E;
-}
-
-nav span a[href= "http://www.sensacine.com/peliculas/pelicula-175305/reparto" ]:hover{
-    background-color: #9E9E9E;
-}
-
 
 section article p:first-letter {
     color: gold;
@@ -78,4 +65,3 @@ section article p:first-letter {
 article:first-child p:first-line {
     text-decoration: underline;
 }
-
