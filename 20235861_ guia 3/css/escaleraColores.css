@@ -1,0 +1,65 @@
+div {
+    position: absolute;
+}
+
+#diez_de_diamantes {
+    top: 10%;
+    left: 10%;
+    z-index: 1;
+}
+
+#sota_de_diamantes {
+    top: 12%;
+    left: 12%;
+    z-index: 2;
+}
+
+#reina_de_diamantes {
+    top: 14%;
+    left: 14%;
+    z-index: 3;
+}
+
+#rey_de_diamantes {
+    top: 16%;
+    left: 16%;
+    z-index: 4;
+}
+
+#as_de_diamantes {
+    top: 18%;
+    left: 18%;
+    z-index: 5;
+}
+
+/* Nueva pila de abajo */
+#diez_de_diamantes_abajo {
+    top: 40%; 
+    left: 10%;
+    z-index: 5; 
+}
+
+#sota_de_diamantes_abajo {
+    top: 42%; 
+    left: 12%;
+    z-index: 4; 
+}
+
+#reina_de_diamantes_abajo {
+    top: 44%; 
+    left: 14%;
+    z-index: 3; 
+}
+
+#rey_de_diamantes_abajo {
+    top: 46%; 
+    left: 16%;
+    z-index: 2;
+
+}
+
+#as_de_diamantes_abajo {
+    top: 48%; 
+    left: 18%;
+    z-index: 1; 
+}
