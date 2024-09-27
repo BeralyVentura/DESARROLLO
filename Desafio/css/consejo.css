@@ -1,0 +1,54 @@
+body{
+    font-family: Arial;
+    background-image: url("../images/minimal-wave-background-vector-white-abstract-style_53876-126685.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    min-height: 100vh; 
+
+}
+
+.video .ofertas h3{
+    text-align: center;
+    font-size: 70px;
+    color: rgb(35, 71, 135);
+    font-weight: bold;
+    margin-top: 2.5em;
+}
+
+#consejito {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(52, 58, 68);
+    color: white;
+    text-align: center;
+    padding-left: 30px;
+}
+
+@media screen and (max-width: 480px) {
+    .video .ofertas h3 {
+        font-size: 40px;
+    }
+    #consejito {
+        padding-left: 10px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .video .ofertas h3 {
+        font-size: 55px;
+    }
+    #consejito {
+        padding-left: 20px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .video .ofertas h3 {
+        font-size: 70px;
+    }
+    #consejito {
+        padding-left: 30px;
+    }
+}

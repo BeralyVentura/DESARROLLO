@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+#apli {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(52, 58, 68);
+    color: white;
+
+
+}
+
+#formu{
+    background-image: url("../images/minimal-wave-background-vector-white-abstract-style_53876-126685.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    min-height: 100vh; 
+
+}
+
+.aplica h3 {
+    text-align: center;
+    font-size: 4rem;
+    color: rgb(35, 71, 135);
+    font-weight: bold;
+    margin-top: 1em;
+}
+
+.aplica {
+    margin: 1rem auto; 
+    max-width: 90%; 
+}
+
+fieldset {
+    border: none; 
+    padding: 0; 
+}
+.form-container {
+    background-color: rgb(89, 112, 121); 
+    padding: 5%; 
+    border-radius: 0.5rem; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    max-width: 600px; 
+    margin: 0 auto; 
+}
+
+
+label {
+    display: block; 
+    margin-bottom: 0.5rem; 
+    color: white; 
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%; 
+    padding: 1rem; 
+    border: 1px solid #ddd;
+    border-radius: 0.25rem; 
+    font-size: 1rem; 
+
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #4A90E2; 
+}
+
+
+input[type="submit"] {
+    background-color: #d0f0f9; 
+    color: rgb(0, 0, 0); 
+    border: none;
+    padding: 1rem; 
+    border-radius: 0.25rem; 
+    width: 100%;
+    margin-top: 1rem; 
+}
+
+input[type="submit"]:hover {
+    background-color: #d8bfea; 
+
+}
+
+@media screen and (max-width: 480px) {
+    .aplica h3 {
+        font-size: 2.5rem;
+    }
+    .form-container {
+        padding: 2%;
+        max-width: 90%;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .aplica h3 {
+        font-size: 3.5rem;
+    }
+    .form-container {
+        max-width: 80%;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .aplica h3 {
+        font-size: 4rem;
+    }
+    .form-container {
+        max-width: 600px;
+    }
+}

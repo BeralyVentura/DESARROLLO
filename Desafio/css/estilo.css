@@ -1,0 +1,283 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+*{
+	margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+	font-family: 'Roboto', sans-serif;
+	
+}
+
+body{
+    font-family: Arial;
+    background-color: white;
+}
+
+.envoltorio {
+    overflow: hidden;
+    width: 100%; 
+    margin: 0; 
+}
+
+header {
+    background-color: rgb(52, 58, 68);
+    padding: 0 20px;
+}
+
+header .envoltorio {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    
+}
+
+header .logo img {
+    height: 42px;
+}
+
+
+header .logo {
+    margin-right: auto; 
+    padding-right: 100px;
+    margin-left: 30px;
+}
+
+#menulinea {
+    border: none; 
+    border-top: 2px solid rgb(35, 71, 135); 
+    width: 100%; 
+}
+
+#titulo {
+    text-decoration: none;
+    color: white;
+
+}
+
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li {
+    line-height: 5em;
+}
+
+
+nav a {
+    color: #ddd;
+    display: block;
+    padding: 0 1.5em;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: rgb(35, 71, 135);
+}
+
+nav>ul {
+    background-color: rgb(52, 58, 68);
+    width: 100%;
+    overflow: hidden;
+	display: flex;
+    padding: 0;
+}
+
+nav>ul>li {
+    float: none;
+}
+
+nav>ul>li>ul {
+    position: absolute;
+    display: none;
+}
+
+nav>ul> li:hover ul {
+    display: block;
+}
+
+nav>ul>li>ul>li {
+    background-color: rgb(53, 58, 67);
+}
+
+nav>ul>li>ul>li a {
+    padding: 0.5em 2.5em;
+    color: #ddd;
+}
+
+
+.contenedor-slider {
+    width: 100%; 
+}
+
+.contenedor-slider img {
+    width: 100%; 
+    height: auto; 
+}
+
+.intro {
+    background: rgb(35, 71, 135);
+    border-radius: 0; 
+    padding: 70px; 
+}
+
+.intro h3 {
+    font-size: 50px ;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+p {
+    text-align: justify;
+    font-size: 15px;
+    color: white;
+}
+
+.envoltorio {
+    text-align: center; 
+}
+
+
+.boton {
+    background-color: rgba(21, 43, 80, 0.843); 
+    color: white; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    display: inline-block; 
+    margin-top: 20px; 
+}
+
+.boton:hover {
+    background-color: rgb(52, 58, 68); 
+}
+
+.servicios .grid {
+    display: inline-block; 
+    width: calc(30.3% - 1%); 
+    margin: 10px; 
+    border: 0.5px solid rgb(209, 207, 207);
+    padding: 10px;
+    position: relative; 
+    vertical-align: top; 
+    margin-top: 50px;
+}
+
+.servicios img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0; 
+    padding: 10px; 
+}
+
+.line{
+    border-top: 1px solid rgb(209, 207, 207); 
+
+}
+
+.botoncito {
+    display: inline-block;
+    padding: 10px 20px; 
+    background-color: rgba(21, 43, 80, 0.843);
+    color: white; 
+    text-decoration: none; 
+    margin-top: 20px; 
+
+}
+.botoncito:hover {
+    background-color: rgb(52, 58, 68); 
+}
+.servicios .grid p{
+    color:rgba(94, 92, 92, 0.729);
+    padding: 20px;
+}
+
+.servicios .grid h3{
+    color:rgb(35, 71, 135);
+    font-size: 30px;
+    font-weight: normal;
+}
+
+
+
+.testimonios {
+    background: rgb(236, 234, 230);
+    border-radius: 0; 
+    padding: 70px; 
+}
+
+.testimonios .testimonios-grid h3{
+    font-size: 30px;
+    font-weight: normal;
+    color: #504f4f;
+}
+
+.testimonios .testimonios-grid p{
+    color: #8d8c8c;
+    padding: 0 200px 0 200px ;
+}
+
+footer{
+    text-align: center;
+    margin: 0;
+    font-size: 1em;  
+    line-height: 3.5em;    
+    clear: both;    
+    background-color: rgb(52, 58, 68);    
+    color: white;    
+    width: 100%;
+    padding-left: 30px;
+}
+
+@media screen and (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .servicios .grid {
+        width: 100%; 
+        margin: 10px 0;
+    }
+    .testimonios .testimonios-grid p {
+        padding: 0 20px; 
+    }
+    footer {
+        font-size: 0.5em; 
+        padding: 10px; 
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    header .envoltorio {
+        flex-direction: column;
+        align-items: flex-start; 
+    }
+    nav a {
+        padding: 0 1em; 
+    }
+    .servicios .grid {
+        width: calc(50% - 1%); 
+    }
+    footer {
+        font-size: 0.75em; 
+        padding: 15px; 
+    }
+}
+
+@media screen and (min-width: 769px) {
+    header .envoltorio {
+        flex-direction: row; 
+    }
+    .servicios .grid {
+        width: calc(30.3% - 1%); 
+    }
+    footer {
+        font-size: 1em;
+        padding: 20px; 
+    }
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Bolsa de trabajo ESEN</title>
+	<link href="../css/estilo.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="../css/aplicar.css">
+</head>
+<body id="formu">
+	<header>
+		<div class="envoltorio">
+			<div class="logo">
+				<a href="index.html"><img src="../images/logo2.png" title="logo" height="42px" /></a>
+			</div>
+			<nav>
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="ofertas.html">Ofertas</a></li>
+					<li><a href="consejos.html">Consejos</a></li>
+					<li class="activo"><a href="aplicar.html">Aplicar</a></li>
+					<li><a href="#">Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<section class="aplica">
+		<h3>Formulario de Aplicación</h3>
+		<br><br>
+		<article class="ofertas">
+			<div class="form-container">
+				<form action="/submit" method="POST">
+                    <fieldset>
+						<div class="input-container">
+							<label for="nombre">Nombre:</label>
+							<input type="text" id="nombre" name="nombre" pattern="^[a-zA-Z\s]+$" title="Solo se aceptan letras" required><br><br>
+						
+							<label for="apellidos">Apellidos:</label>
+							<input type="text" id="apellidos" name="apellidos" pattern="^[a-zA-Z\s]+$" title="Solo se aceptan letras" required><br><br>
+						
+							<label for="carnet">Carnet:</label>
+							<input type="text" id="carnet" name="carnet" pattern="^[0-9]+$" title="Solo se aceptan números" required><br><br>
+						
+							<label for="departamento">Departamento de residencia:</label>
+							<select id="departamento" name="departamento" required>
+								<option value="San Salvador">San Salvador</option>
+								<option value="Santa Ana">Santa Ana</option>
+								<option value="San Miguel">San Miguel</option>
+								<option value="San Vicente">San Vicente</option>
+								<option value="La Paz">La Paz</option>
+								<option value="La Unión">La Union</option>
+								<option value="Usulután">Usulután</option>
+								<option value="La Libertad">La Libertad</option>
+								<option value="Cuscatlán">Cuscatlán</option>
+								<option value="Ahuachapán">Ahuachapán</option>
+								<option value="Sonsonate">Sonsonate</option>
+								<option value="Cabañas">Cabañas</option>
+								<option value="Chalatenango">Chalatenango</option>
+								<option value="San Miguel">Morazán</option>					
+							</select><br><br>
+						
+							<label for="edad">Edad:</label>
+							<input type="text" id="edad" name="edad" pattern="^[0-9]+$" title="Solo se aceptan números" required><br><br>
+						
+							<label for="genero">Género:</label>
+							<select id="genero" name="genero" required>
+								<option value="Masculino">Masculino</option>
+								<option value="Femenino">Femenino</option>
+							</select><br><br>
+							<label for="nacimiento">Fecha de nacimiento:</label>
+							<input type="date" id="nacimiento" name="nacimiento" required><br><br>
+						
+							<label for="telefono">Número de teléfono:</label>
+							<input type="tel" id="telefono" name="telefono" pattern="^[0-9]{4}-?[0-9]{4}$" title="Solo se aceptan números en el formato 2222-2222" required><br><br>
+						
+							<label for="carrera">Carrera:</label>
+							<select id="carrera" name="carrera" required>
+								<option value="">Seleccione su carrera</option>
+								<option value="Ingeniería de Software y Negocios Digitales">Ingeniería de Software y Negocios Digitales</option>
+								<option value="Ingeniería de Negocios">Ingeniería de Negocios</option>
+								<option value="Licenciatura en Economía y Negocios">Licenciatura en Economía y Negocios</option>
+								<option value="Licenciatura en Ciencias Jurídicas">Licenciatura en Ciencias Jurídicas</option>
+							</select><br><br>
+						
+							<label for="pretension">Pretensión salarial:</label>
+							<input type="number" id="pretension" name="pretension" pattern="^[0-9]+$" title="Solo se aceptan números" required><br><br>
+						
+							<input type="submit" value="Enviar"><br> <br>
+						</div>
+                    </fieldset>
+                </form>
+			</div>
+		</article>
+		
+	</section>
+	<footer id="apli">
+		<p>Creado por: Genesis Beraly Parada Ventura - 20235851</p>
+	</footer> 
+</body>
+</html>
+
+
