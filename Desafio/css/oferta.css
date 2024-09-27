@@ -47,7 +47,7 @@ header .logo {
 
 table {
     width: 100%;
-    max-width: 800px; /* Ancho máximo para mantener el tamaño */
+    max-width: 800px; 
     margin: 0 auto;
     border-collapse: collapse;
     text-align: center;
@@ -55,10 +55,10 @@ table {
 
 th, td {
     border: 1px solid white;
-    padding: 0.5em; /* Padding reducido */
+    padding: 0.5em; 
     font-family: "Roboto", sans-serif;
     word-wrap: break-word;
-    font-size: 0.9em; /* Tamaño de fuente ajustado */
+    font-size: 0.9em; 
 }
 tr:nth-child(2n+1){
     background-color: rgb(128, 146, 176);
@@ -112,12 +112,10 @@ tr:nth-child(even) .boton-apli {
     padding-left: 30px;
 }
 
-
-
 @media screen and (max-width: 768px) {
     th, td {
-        font-size: 0.8em; /* Tamaño de fuente menor en pantallas pequeñas */
-        padding: 0.4em; /* Padding menor en pantallas pequeñas */
+        font-size: 0.8em; 
+        padding: 0.4em; 
     }
 }
 
