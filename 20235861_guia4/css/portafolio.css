@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; 
+    background-color: #fff2e8;
+    color: #453030;
+    line-height: 1.6; 
+}
+
+
+header {
+    background-color: #ffcccb; 
+    padding: 20px; 
+    text-align: center; 
+}
+
+header h1 {
+    font-size: 2.5em; 
+    margin-bottom: 10px; 
+    color: #685541;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #492f0d; 
+    padding: 20px;
+}
+
+section {
+    margin: 20px; 
+    padding: 15px;
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #d1006b; 
+    margin-bottom: 10px; 
+}
+
+ul {
+    list-style-type: none; 
+    padding-left: 0; 
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+.btn {
+    display: inline-block; 
+    background-color: #d1006b; 
+    color: #ffffff; 
+    padding: 30px 15px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    transition: background-color 0.3s; 
+}
+
+.btn:hover {
+    background-color:#a2004d; 
+}
+
+footer {
+    text-align: center; 
+    padding: 20px; 
+    background-color:#ffcccb; 
+    position: relative; 
+    bottom: 0; 
+    width: 100%; 
+    margin-top: 20px; 
+}
+
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em; 
+    }
+
+    header p {
+        font-size: 1em; 
+    }
+
+    section {
+        margin: 10px; 
+        padding: 10px; 
+    }
+
+    .btn {
+        padding: 8px 12px; 
+        font-size: 0.9em; 
+    }
+}
+
+/* Pantallas medianas (481px a 768px) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    header h1 {
+        font-size: 2em; 
+    }
+
+    header p {
+        font-size: 1.1em; 
+    }
+
+    section {
+        margin: 15px; 
+        padding: 12px; 
+    }
+
+    .btn {
+        padding: 9px 14px; 
+    }
+}
+
+
+@media screen and (min-width: 769px) {
+    header h1 {
+        font-size: 2.5em; 
+    }
+
+    header p {
+        font-size: 1.2em; 
+    }
+
+    section {
+        margin: 20px; 
+        padding: 15px; 
+    }
+
+    .btn {
+        padding: 10px 15px; 
+    }
+}
