@@ -24,9 +24,9 @@ const alumnos =[
 "oscar.lopez@estudiante.esen.edu.sv" } ];
 
     // Agregar filas de los datos al cuerpo de la tabla
-    alumnos.forEach (alumno => {
+    alumnos.forEach(alumno => {
         table += "<tr>";
-        table += `<td scope='row'>${alumno.id}</td>*`;
+        table += `<td scope='row'>${alumno.id}</td>`;
         table += `<td>${alumno.nombre}</td>`; 
         table += `<td>${alumno.apellido}</td>`;
         table += `<td>${alumno.correo}</td>`;
