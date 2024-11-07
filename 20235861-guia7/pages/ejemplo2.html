@@ -90,59 +90,60 @@
                     </div>
 
                     <div class="row">
-                        <div class="col">
+                        <div class="col-md-6">
                             <div class="mb-3">
-                                <span class="fw-bold">Seleccione algunos interes</span>
+                                <span class="fw-bold">Seleccione algunos intereses</span>
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="idCkProgramacion">
-                                <label class="form-check-label" for="idCkProgramacion">Programacion</label>
+                                <input type="checkbox" class="form-check-input" id="idCkProgramacion" name="intereses">
+                                <label class="form-check-label" for="idCkProgramacion">Programación</label>
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="idCkBD">
+                                <input type="checkbox" class="form-check-input" id="idCkBD" name="intereses">
                                 <label class="form-check-label" for="idCkBD">Base de Datos</label>
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="idCkRedes">
-                                <label class="form-check-label" for="idCkRedes">Inteligencia artificial</label>
+                                <input type="checkbox" class="form-check-input" id="idCkRedes" name="intereses">
+                                <label class="form-check-label" for="idCkRedes">Redes informáticas</label>
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="idCkSeguridad">
-                                <label class="form-check-label" for="idCkSeguridad">Seguridad informatica</label>
+                                <input type="checkbox" class="form-check-input" id="idCkSeguridad" name="intereses">
+                                <label class="form-check-label" for="idCkSeguridad">Seguridad informática</label>
                             </div>
                         </div>
-                        <div class="col">
+                        
+                        <div class="col-md-6">
                             <div class="mb-3">
-                                <span class="fw-bold">¿Que carrera estudia?</span>
+                                <span class="fw-bold">¿Qué carrera estudia?</span>
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="radio" class="form-check-input" name="idRdCarrera" id="idRdIng">
+                                <input type="radio" class="form-check-input" name="carrera" id="idRdIng">
                                 <label class="form-check-label" for="idRdIng">Ingeniería de Software y Negocios Digitales</label>
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="radio" class="form-check-input" name="idRdCarrera" id="idRdLic">
+                                <input type="radio" class="form-check-input" name="carrera" id="idRdLic">
                                 <label class="form-check-label" for="idRdLic">Licenciatura en Economía y Negocios</label>
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="radio" class="form-check-input" name="idRdCarrera" id="idRdTec">
+                                <input type="radio" class="form-check-input" name="carrera" id="idRdTec">
                                 <label class="form-check-label" for="idRdTec">Ingeniería de Negocios</label>
                             </div>
                             <div class="mb-3 form-check">
-                                <input type="radio" class="form-check-input" name="idRdCarrera" id="idRdOtro">
+                                <input type="radio" class="form-check-input" name="carrera" id="idRdOtro">
                                 <label class="form-check-label" for="idRdOtro">Otra</label>
                             </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
+                        <div class="col-md-6">
                             <div class="mb-3">
                                 <label for="idCmPais" class="form-label fw-bold">País de origen</label>
-                                <select class="form-select" id="idCmPais">
-                                    <option selected>Seleccione una opcion</option>
-                                    <option value="1">EL Salvador</option>
+                                <select class="form-select" id="idCmPais" name="paisOrigen">
+                                    <option value="">Seleccione una opción</option> <!-- Valor vacío para la opción predeterminada -->
+                                    <option value="1">El Salvador</option>
                                     <option value="2">Guatemala</option>
                                     <option value="3">Honduras</option>
-                                    <option value="4">Panama</option>
+                                    <option value="4">Panamá</option>
                                     <option value="5">Costa Rica</option>
                                     <option value="6">Belice</option>
                                     <option value="7">Nicaragua</option>
@@ -150,10 +151,10 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col">
+                    
+                        <div class="col-md-6">
                             <div class="mb-3">
-                                <label for="idArchivo" class="form-label fw-bold">Seleccione la imagen de su
-                                    avatar</label>
+                                <label for="idArchivo" class="form-label fw-bold">Seleccione la imagen de su avatar</label>
                                 <input class="form-control" type="file" id="idArchivo">
                             </div>
                         </div>
