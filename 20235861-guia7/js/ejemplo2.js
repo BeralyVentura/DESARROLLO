@@ -1,6 +1,6 @@
 // Obteniendo la referencia de los elementos
 const formulario = document.forms["frmRegistro"];
-const button = document.forms["frmRegistro"].elements["btnRegistro"];
+const button = formulario.elements["btnRegistro"];
 
 // CREANDO MODAL CON BOOTSTRAP
 const modal = new bootstrap.Modal(document.getElementById("idModal"), {});
@@ -23,6 +23,7 @@ const recorrerFormulario = function () {
     let emailInvalido = false;
     let contrasenaNoCoincide = false;
     let interesesSeleccionados = false;
+    let paisSeleccionado = false;
 
     // Obteniendo la fecha actual
     const fechaActual = new Date();
@@ -30,15 +31,26 @@ const recorrerFormulario = function () {
     let contrasena = "";
     let repetirContrasena = "";
 
-    // Recorriendo elementos del formulario
+    // Verificar si al menos un interés está seleccionado
+    const intereses = formulario.querySelectorAll('input[name="intereses"]');
+    intereses.forEach((interes) => {
+        if (interes.checked) {
+            interesesSeleccionados = true;
+        }
+    });
+
+    // Verificar si se ha seleccionado un país de origen
+    const paisOrigen = formulario.elements["paisOrigen"];
+    if (paisOrigen && paisOrigen.value !== "") {
+        paisSeleccionado = true;
+    }
+
+    // Recorriendo elementos del formulario para otras validaciones
     let elementos = formulario.elements;
     let totalElementos = elementos.length;
 
     for (let index = 0; index < totalElementos; index++) {
-        // Accediendo a cada hijo del formulario
         let elemento = elementos[index];
-
-        // verificando el tipo de control en el formulario
         let tipoElemento = elemento.type;
         let tipoNode = elemento.nodeName;
 
@@ -67,36 +79,18 @@ const recorrerFormulario = function () {
         // Guardando valores de contraseña y repetir contraseña
         if (tipoElemento === "password" && tipoNode === "INPUT") {
             if (!contrasena) {
-                contrasena = elemento.value; // Primer campo de contraseña
+                contrasena = elemento.value;
             } else {
-                repetirContrasena = elemento.value; // Segundo campo de contraseña
+                repetirContrasena = elemento.value;
                 if (contrasena !== repetirContrasena) {
                     contrasenaNoCoincide = true;
                 }
             }
             totPass++;
         }
+    }
 
-        // Validación de al menos un interés seleccionado
-        if ((tipoElemento === "checkbox" || tipoElemento === "radio") && elemento.name === "intereses" && elemento.checked) {
-            interesesSeleccionados = true;
-            break; // Sale del bucle en cuanto encuentra una opción seleccionada
-        }
-
-        // Contabilizando el tipo de elemento
-        if (tipoElemento === "text" && tipoNode === "INPUT") {
-            totText++;
-        } else if (tipoElemento === "radio" && tipoNode === "INPUT") {
-            totRadio++;
-        } else if (tipoElemento === "checkbox" && tipoNode === "INPUT") {
-            totCheck++;
-        } else if (tipoElemento === "file" && tipoNode === "INPUT") {
-            totFile++;
-        } else if (tipoNode === "SELECT") {
-            totSelect++;
-        }
-    } // Fin del bucle for
-
+    // Validaciones y mensajes de error
     if (camposVacios.length > 0) {
         alert("Por favor, rellene los campos vacíos.");
     } else if (fechaInvalida) {
@@ -107,6 +101,8 @@ const recorrerFormulario = function () {
         alert("Las contraseñas no coinciden. Por favor, verifique.");
     } else if (!interesesSeleccionados) {
         alert("Por favor, seleccione al menos un interés.");
+    } else if (!paisSeleccionado) {
+        alert("Por favor, seleccione un país de origen.");
     } else {
         let resultado = 
             `Total de input[type="text"] = ${totText}<br>
@@ -122,7 +118,7 @@ const recorrerFormulario = function () {
     }
 };
 
-//agregando eventos al boton 
+// Agregando eventos al botón 
 button.onclick = () => {
     recorrerFormulario();
 }; 
