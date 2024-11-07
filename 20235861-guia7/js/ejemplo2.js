@@ -1,24 +1,19 @@
-// Obteniendo la referencia de los elementos
 const formulario = document.forms["frmRegistro"];
 const button = formulario.elements["btnRegistro"];
-
-// CREANDO MODAL CON BOOTSTRAP
 const modal = new bootstrap.Modal(document.getElementById("idModal"), {});
 const bodyModal = document.getElementById("idBodyModal");
 
-// Función para verificar si una carrera está seleccionada
+//carrera  seleccionada
 function validarSeleccionCarrera() {
-    const opcionesCarrera = document.getElementsByName('carrera'); // Cambiado a 'carrera'
+    const opcionesCarrera = document.getElementsByName("carrera");
     for (let opcion of opcionesCarrera) {
-        if (opcion.checked) {
-            return true; // Si se encuentra una opción seleccionada, retorna true
-        }
+        if (opcion.checked) return true;
     }
-    alert('Por favor, seleccione una carrera.');
+    alert("Por favor, seleccione una carrera.");
     return false;
 }
 
-// Recorrer el formulario
+// recorr4er y validar el formulario
 const recorrerFormulario = function () {
     let totText = 0;
     let totRadio = 0;
@@ -28,6 +23,7 @@ const recorrerFormulario = function () {
     let totFile = 0;
     let totPass = 0;
     let totEmail = 0;
+
     let camposVacios = [];
     let fechaInvalida = false;
     let emailInvalido = false;
@@ -35,32 +31,26 @@ const recorrerFormulario = function () {
     let interesesSeleccionados = false;
     let paisSeleccionado = false;
 
-    // Obteniendo la fecha actual
     const fechaActual = new Date();
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Expresión regular para validar el correo electrónico
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     let contrasena = "";
     let repetirContrasena = "";
 
-    // Verificar si al menos un interés está seleccionado
+    // un interés está seleccionado
     const intereses = formulario.querySelectorAll('input[name="intereses"]');
     intereses.forEach((interes) => {
-        if (interes.checked) {
-            interesesSeleccionados = true;
-        }
+        if (interes.checked) interesesSeleccionados = true;
     });
 
-    // Verificar si se ha seleccionado un país de origen
+    // se ha seleccionado un país de origen
     const paisOrigen = formulario.elements["paisOrigen"];
-    if (paisOrigen && paisOrigen.value !== "") {
-        paisSeleccionado = true;
-    }
+    if (paisOrigen && paisOrigen.value !== "") paisSeleccionado = true;
 
-    // Recorriendo elementos del formulario para otras validaciones
+    // formulario para validar
     for (let elemento of formulario.elements) {
         let tipoElemento = elemento.type;
         let tipoNode = elemento.nodeName;
 
-        // Verificando si el campo está vacío
         if ((tipoElemento === "text" || tipoElemento === "password" || tipoElemento === "email" || tipoElemento === "date") && elemento.value === "") {
             camposVacios.push(elemento);
         }
@@ -75,35 +65,29 @@ const recorrerFormulario = function () {
         if (tipoElemento === "password") totPass++;
         if (tipoElemento === "email") totEmail++;
 
-        // Validando la fecha de nacimiento
+        // fecha de nacimiento
         if (tipoElemento === "date" && tipoNode === "INPUT") {
             const fechaNacimiento = new Date(elemento.value);
-            if (fechaNacimiento > fechaActual) {
-                fechaInvalida = true;
-            }
+            if (fechaNacimiento > fechaActual) fechaInvalida = true;
         }
 
-        // Validando el formato del correo electrónico
+        //  correo electrónico
         if (tipoElemento === "email" && tipoNode === "INPUT") {
-            if (!emailRegex.test(elemento.value)) {
-                emailInvalido = true;
-            }
+            if (!emailRegex.test(elemento.value)) emailInvalido = true;
         }
 
-        // Guardando valores de contraseña y repetir contraseña
+        // Verificando contraseñas
         if (tipoElemento === "password" && tipoNode === "INPUT") {
             if (!contrasena) {
                 contrasena = elemento.value;
             } else {
                 repetirContrasena = elemento.value;
-                if (contrasena !== repetirContrasena) {
-                    contrasenaNoCoincide = true;
-                }
+                if (contrasena !== repetirContrasena) contrasenaNoCoincide = true;
             }
         }
     }
 
-    // Validaciones y mensajes de error
+    // Mensajes de error si las validaciones fallan
     if (camposVacios.length > 0) {
         alert("Por favor, rellene los campos vacíos.");
         return;
@@ -125,28 +109,92 @@ const recorrerFormulario = function () {
         return;
     }
     if (!validarSeleccionCarrera()) {
-        return; // Si no se selecciona una carrera, detener la ejecución
+        return;
     }
     if (!paisSeleccionado) {
         alert("Por favor, seleccione un país de origen.");
         return;
     }
 
-    // Mostrar resultados en el modal si todo es válido
-    let resultado = 
-        `Total de input[type="text"] = ${totText}<br>
-        Total de input[type="password"] = ${totPass}<br>
-        Total de input[type="radio"] = ${totRadio}<br>
-        Total de input[type="checkbox"] = ${totCheck}<br>
-        Total de input[type="date"] = ${totDate}<br>
-        Total de input[type="email"] = ${totEmail}<br>
-        Total de select = ${totSelect}<br>`;
+    // Mostrando resultados en el modal si todo es válido
+    mostrarResultados(totText, totPass, totRadio, totCheck, totDate, totEmail, totSelect);
+};
 
-    bodyModal.innerHTML = resultado;
+function mostrarResultados(totText, totPass, totRadio, totCheck, totDate, totEmail, totSelect) {
+    bodyModal.innerHTML = ""; // Limpiando contenido previo
+
+    // Agregando conteo de tipos de inputs
+    const conteoDiv = document.createElement("div");
+    conteoDiv.innerHTML = `
+        Total de input[type="text"]: ${totText}<br>
+        Total de input[type="password"]: ${totPass}<br>
+        Total de input[type="radio"]: ${totRadio}<br>
+        Total de input[type="checkbox"]: ${totCheck}<br>
+        Total de input[type="date"]: ${totDate}<br>
+        Total de input[type="email"]: ${totEmail}<br>
+        Total de select: ${totSelect}<br>
+    `;
+    bodyModal.appendChild(conteoDiv);
+
+    // Crear tabla de resultados
+    const table = document.createElement("table");
+    table.classList.add("table", "table-striped");
+
+    const thead = document.createElement("thead");
+    const headerRow = document.createElement("tr");
+
+    const thCampo = document.createElement("th");
+    thCampo.textContent = "Campo";
+    headerRow.appendChild(thCampo);
+
+    const thValor = document.createElement("th");
+    thValor.textContent = "Valor";
+    headerRow.appendChild(thValor);
+
+    thead.appendChild(headerRow);
+    table.appendChild(thead);
+
+    const tbody = document.createElement("tbody");
+
+    // Captura de valores del formulario
+    agregarFila(tbody, "Nombres", formulario["idNombre"].value);
+    agregarFila(tbody, "Apellidos", formulario["idApellidos"].value);
+    agregarFila(tbody, "Fecha de Nacimiento", formulario["idFechaNac"].value);
+    agregarFila(tbody, "Correo", formulario["idCorreo"].value);
+    agregarFila(tbody, "Contraseña", formulario["idPassword"].value);
+
+    // Captura de intereses seleccionados
+    const interesesSeleccionados = [];
+    document.querySelectorAll("input[name='intereses']:checked").forEach((checkbox) => {
+        interesesSeleccionados.push(checkbox.nextElementSibling.textContent);
+    });
+    agregarFila(tbody, "Intereses", interesesSeleccionados.join(", "));
+
+    // Captura de carrera seleccionada
+    const carreraSeleccionada = document.querySelector("input[name='carrera']:checked");
+    if (carreraSeleccionada) {
+        agregarFila(tbody, "Carrera", carreraSeleccionada.nextElementSibling.textContent);
+    }
+
+    // Captura del país seleccionado
+    const paisOrigen = formulario["paisOrigen"];
+    agregarFila(tbody, "País", paisOrigen.options[paisOrigen.selectedIndex].text);
+
+    table.appendChild(tbody);
+    bodyModal.appendChild(table);
     modal.show();
-};
+}
 
-// Agregando eventos al botón 
-button.onclick = () => {
-    recorrerFormulario();
-};
+function agregarFila(tbody, campo, valor) {
+    const row = document.createElement("tr");
+    const cellCampo = document.createElement("td");
+    cellCampo.textContent = campo;
+    const cellValor = document.createElement("td");
+    cellValor.textContent = valor;
+    row.appendChild(cellCampo);
+    row.appendChild(cellValor);
+    tbody.appendChild(row);
+}
+
+// Asociar evento al botón
+button.addEventListener("click", recorrerFormulario);
